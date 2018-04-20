@@ -1,0 +1,24 @@
+<h1> Let's edit this song on your playlists! </h1>
+<h3> The song {{ song_name }} is currently on the following playlists...</h3>
+
+  {% for instance in songs %}
+  <li>
+    {{ instance[1].name }}
+  </li>
+  {% endfor %}
+
+  <form method = "POST" action="{{ url_for('editSong', name=song_name) }}">
+{{ delete_form.hidden_tag() }}
+{{ delete_form.playlists.label }} {{ delete_form.playlists() }}
+  {{ delete_form.delete()}}
+  </form>
+
+<h3> Its current rank is {{ rank }}</h3>
+
+<form method = "POST" action = "{{ url_for('editSong', name = song_name) }}">
+  {{ form.hidden_tag() }}
+  {{ form.newRank.label }} {{ form.newRank() }}
+  {{ form.submit () }}
+</form>
+
+{% extends 'base.html' %}

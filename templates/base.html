@@ -1,0 +1,10 @@
+<h3> Navigation: </h3>
+  <li><a href = " {{ url_for('home') }}"> View your playlists! </a>
+  <li><a href = " {{ url_for('createPlaylist', name = 'test') }}"> View and edit a playlist! (This link requires one called 'test') </a>
+  <li><a href = " {{ url_for('editSong',name = 'Controlla') }}"> View and edit a song! (This link requires a song 'Controlla') </a>
+  <li><a href = " {{ url_for('addSongs', pname = 'test') }}"> Add songs to a playlist! (This link requires one called 'test') </a>
+  <li><a href = " {{ url_for('allSongs') }}"> View the global rankings! </a>
+  <li><a href = " {{ url_for('login') }}"> Login! </a>
+  <li><a href = " {{ url_for('logout') }}"> Logout! </a>
+  <li><a href = " {{ url_for('register') }}"> Register! </a>
+  <li><a href = " {{ url_for('deletePlaylist', pname = 'test') }}"> Deletes a playlist (This link requires one called 'test') </a>

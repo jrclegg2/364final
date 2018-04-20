@@ -1,0 +1,34 @@
+{% if current_user.is_authenticated %}
+    <a href="{{ url_for('logout') }}"> Sign Out {{current_user.username}} </a>
+{% else %}
+    <a href="{{ url_for('login') }}"> Sign In</a>
+{% endif %}
+<div>
+<form action='all_songs' method="GET">
+{{ searchForm.query.label }} {{ searchForm.query() }}
+{{ searchForm.submit() }}
+</form>
+
+{% if playlists %}
+<ul>
+    {% for playlist in playlists %}
+    <li><a href=" {{ url_for('createPlaylist', name = playlist.name)}}">  Edit your "{{ playlist.name }}" playlist! </a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<b> You need to add some playlists or sign in! </b>
+{% endif %}
+</div>
+{% if current_user.is_authenticated %}
+<div>
+    Create a new playlist!
+    <form action="/" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.name.label }} {{ form.name() }}
+        {{ form.song_picks.label }} {{ form.song_picks }}
+        {{ form.submit() }}
+    </form>
+</div>
+{% endif %}
+
+{% extends 'base.html' %}

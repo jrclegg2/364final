@@ -1,0 +1,10 @@
+For this application, my goal is to expand upon my midterm and grab an idea from
+an earlier homework, in which we created lists with priorities that you could update.
+However, for this application, you will be able to rank the songs in order,
+and save them into a playlist with their rankings. I also hope to include the link
+to spotify for each song that a user may have saved. So, more simply, this app
+will allow users to login, view the songs and playlists that they have saved,
+and then rank these songs within each playlist and compare them to the average
+ratings that other users have given it on the website. I also hope to include
+something like a highest rated songs page, so users can see how other users
+are rating the songs in the database!

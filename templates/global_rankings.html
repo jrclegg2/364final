@@ -1,0 +1,15 @@
+<h1> These are our global rankings! </h1>
+{% if song %}
+<h2> Your search returned: </h2>
+  <h2> {{ song.name }} is rated an average of {{ counts[song.name]['total'] / counts[song.name]['counts'] }} </h2>
+{% endif %}
+------------------------------------------------------------------------------------------
+<h4>
+    {% for count in counts %}
+    <li>
+      {{ count }} has an average rating of {{ counts[count]['total'] / counts[count]['counts'] }}
+  </li>
+  {% endfor %}
+</h4>
+
+{% extends 'base.html' %}

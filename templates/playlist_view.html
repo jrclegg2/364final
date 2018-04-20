@@ -1,0 +1,23 @@
+<div>
+{% for message in get_flashed_messages() %}
+{{ message }}
+{% endfor %}
+</div>
+
+<h1> These are your songs on {{ playlistName }} </h1>
+<a href="{{ url_for('addSongs', pname = playlistName) }}">
+  <h3> Want to add a song?? </h3>
+</a>
+<form action = " {{ url_for('deletePlaylist', pname = playlistName) }}" method="POST">
+{{ form.hidden_tag() }}
+  {{ form.delete() }}
+</form>
+
+<ul>
+{% for song in songs %}
+<li>
+  <a href="{{ url_for('editSong', name = song.name) }}"> Click here to edit {{ song.name }} by {{ song.artist }} </a>
+</li>
+{% endfor %}
+
+{% extends 'base.html' %}

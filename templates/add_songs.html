@@ -1,0 +1,11 @@
+<h1> Add a song to {{ pname }}! </h1>
+
+<div>
+  <form action="{{ url_for('addSongs', pname = playlist.name) }}" method = "POST">
+{{ form.hidden_tag() }}
+{{ form.song_picks.label }} {{ form.song_picks() }}
+{{ form.submit() }}
+  </form>
+</div>
+
+{% extends 'base.html' %}
